@@ -1,6 +1,6 @@
 function loginRequired(user, pass){
     if ((user == "")||(pass == "")){
-        alert("Debes completar todos los campos.")
+        swal("Error", "Tienes que completar todos los campos!", "error");
     }else{
         window.location.href = "inicio.html";
     };

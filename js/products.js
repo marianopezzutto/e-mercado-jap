@@ -2,11 +2,11 @@ let id_number = localStorage.getItem("catID");
 
 const allProducts_url = PRODUCTS_URL + id_number + ".json";
 
-function addContentToHtml(productsList){
+function addContentToHtml(productsArray){
         
     let htmlContentToAppend = "";
-    for(let i = 0; i < productsList.length; i++){
-        let product = productsList[i];
+    for(let i = 0; i < productsArray.length; i++){
+        let product = productsArray[i];
 
             htmlContentToAppend += `
             <div onclick="setCatID(${product.id})" class="list-group-item list-group-item-action cursor-active">
