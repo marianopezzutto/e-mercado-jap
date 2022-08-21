@@ -22,10 +22,10 @@
     
     <div class="container">
       
-      <div class="row vh-100 justify-content-center align-items-center">
+      <div class="row vh-100">
         
-        <div class="col-auto">
-          <img class="img-fluid mb-5" src="img/login.png" height="450" width="300">
+        <div class="signin">
+          <img class="img-fluid mb-5" src="img/login.png">
           <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
           <div class="form-floating mb-3">
@@ -37,13 +37,27 @@
             <input type="password" class="form-control" id="password" placeholder="Password">
             <label for="floatingPassword">Contraseña</label>
           </div>
-          
-          <button class="w-50 btn btn-lg btn-primary" type="submit" id="ingreso">Ingresar</button>
-        </div>
 
-      </div>
-    </div> 
+          <div class="form-floating">
+            <button class="btn btn-primary btn-sm signin mb-3" type="button" id="ingreso">Ingresar</button>
+            <p>o</p>
+          </div>
+          
+          
+          <div id="g_id_onload"
+            data-client_id="650459252503-iva9juqdc5j2gi1a8eosk3gsb156v5ba.apps.googleusercontent.com"
+            data-callback="handleCredentialResponse">
+          </div>
+          <div class="g_id_signin" data-type="standard"></div>
+          
+          
+        </div> 
+      </div>  
+    </div>
+      
+    
   </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
@@ -54,6 +68,7 @@
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="js/login.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
