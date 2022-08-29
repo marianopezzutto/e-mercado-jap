@@ -9,7 +9,7 @@ function addContentToHtml(productsArray){
         let product = productsArray[i];
 
             htmlContentToAppend += `
-            <div onclick="setCatID(${product.id})" class="list-group-item list-group-item-action cursor-active">
+            <div onclick="setCatID(${product.id})" class="list-group-item list-group-item-action cursor-active mb-3">
                 <div class="row">
                     <div class="col-3">
                         <img src="${product.image}" alt="${product.description}" class="img-thumbnail">

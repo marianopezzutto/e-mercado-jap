@@ -47,9 +47,9 @@ document.addEventListener("DOMContentLoaded", function(){
   nav[3].innerHTML = `
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hola! ${user}</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Editar perfil</a>
-      <a class="dropdown-item" href="#">Mi carrito</a>
-      <a class="dropdown-item" href="#">Cerrar sesión</a>
+      <a class="dropdown-item" href="my-profile.html">Editar perfil</a>
+      <a class="dropdown-item" href="cart.html">Mi carrito</a>
+      <a class="dropdown-item" href="index.html">Cerrar sesión</a>
     </div>`
 });
 
