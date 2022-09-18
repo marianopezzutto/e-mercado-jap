@@ -113,22 +113,6 @@ function showScore(numero) {
 }
 
 
-
-function showNewComment(){
-    let date = new Date();
-    let new_comment = {
-        product: id_product,
-        score: document.getElementById("select-score").value,
-        description: document.getElementById("comment-text").value,
-        user: localStorage.getItem("usuario"),
-        dateTime: date.toISOString(),
-
-    };
-    localStorage.setItem("newComment", JSON.stringify(new_comment))
-}
-
-
-
 function mostrar(){
     let info = JSON.parse(localStorage.getItem("newComment"));
     if (info != "" && info.product == id_product){
@@ -168,7 +152,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
                     document.getElementById("sendButton").addEventListener("click", function() {
-                        showNewComment();
+                        
+                            let date = new Date();
+                            let new_comment = {
+                                product: id_product,
+                                score: document.getElementById("select-score").value,
+                                description: document.getElementById("comment-text").value,
+                                user: localStorage.getItem("usuario"),
+                                dateTime: date.toISOString(),
+                        
+                            };
+                            localStorage.setItem("newComment", JSON.stringify(new_comment))
+                        
                         mostrar();
                         
 
