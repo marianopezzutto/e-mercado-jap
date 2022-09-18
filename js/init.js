@@ -44,7 +44,6 @@ let getJSONData = function(url){
     });
 }
 
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function(){
   let user = localStorage.getItem("usuario");
   const buscador = document.createElement("ul");
@@ -64,54 +63,6 @@ document.addEventListener("DOMContentLoaded", function(){
       <a class="dropdown-item" href="index.html">Cerrar sesión</a>
     </div>
     </li>`;
-=======
-function allArrays (){
-  all_products_objet = {};
-  all_products.push(`${PRODUCTS_URL}101.json`);
-  all_products.push(`${PRODUCTS_URL}102.json`);
-  all_products.push(`${PRODUCTS_URL}103.json`);
-  all_products.push(`${PRODUCTS_URL}104.json`);
-  all_products.push(`${PRODUCTS_URL}105.json`);
-  all_products.push(`${PRODUCTS_URL}106.json`);
-  all_products.push(`${PRODUCTS_URL}107.json`);
-  all_products.push(`${PRODUCTS_URL}108.json`);
-  all_products.push(`${PRODUCTS_URL}109.json`);
-
-  for (let i = 0; i < all_products.length; i++) {
-    element = all_products[i];
-    getJSONData(element).then(resultado =>{
-    all_products_objet += (resultado.product);
-    })
-  }
-}
-
-  document.addEventListener("DOMContentLoaded", function(){
-    let user = localStorage.getItem("usuario");
-    const buscador = document.createElement("ul");
-    buscador.className = "navbar-nav w-100 justify-content-between";
-    buscador.id = "search";
-
-    document.getElementById("navbarNav").appendChild(buscador);
-    document.getElementById("search").innerHTML = `
-      <li class="nav-item">
-        <input type="search" class="nav-item form-control me-sm-1" placeholder = "Buscar productos">
-      </li>
-      <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hola! ${user}</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="my-profile.html">Editar perfil</a>
-        <a class="dropdown-item" href="cart.html">Mi carrito</a>
-        <a class="dropdown-item" href="index.html">Cerrar sesión</a>
-      </div>
-      </li>`;
-
-    document.getElementById("search").addEventListener("input", function(){
-      let searching = document.getElementById("search").value;
-      allArrays ()
-      
-    })
-  
->>>>>>> 28b8c6eafdf9bca49f27144834705eb19430c5f8
   
 });
 

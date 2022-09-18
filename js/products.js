@@ -52,14 +52,11 @@ function sortAndShowProducts(sortCriteria, productsArray){
     addContentToHtml();
 }
 
-<<<<<<< HEAD
 function setProID(id) {
     localStorage.setItem("proID", id);
     window.location = "product-info.html"
 }
 
-=======
->>>>>>> 28b8c6eafdf9bca49f27144834705eb19430c5f8
 function addContentToHtml(){
         
     let htmlContentToAppend = "";
