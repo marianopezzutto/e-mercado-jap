@@ -10,6 +10,7 @@ let all_products = [];
 let all_products_objet = {};
 
 
+
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
@@ -43,6 +44,27 @@ let getJSONData = function(url){
     });
 }
 
+<<<<<<< HEAD
+document.addEventListener("DOMContentLoaded", function(){
+  let user = localStorage.getItem("usuario");
+  const buscador = document.createElement("ul");
+  buscador.className = "navbar-nav w-100 justify-content-between"
+  buscador.id = "search"
+
+  document.getElementById("navbarNav").appendChild(buscador);
+  document.getElementById("search").innerHTML = `
+    <li class="nav-item">
+      <input type="search" class="nav-item form-control me-sm-2" placeholder= "Buscar productos">
+    </li>
+    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hola! ${user}</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="my-profile.html">Editar perfil</a>
+      <a class="dropdown-item" href="cart.html">Mi carrito</a>
+      <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+    </div>
+    </li>`;
+=======
 function allArrays (){
   all_products_objet = {};
   all_products.push(`${PRODUCTS_URL}101.json`);
@@ -89,6 +111,7 @@ function allArrays (){
       
     })
   
+>>>>>>> 28b8c6eafdf9bca49f27144834705eb19430c5f8
   
 });
 
