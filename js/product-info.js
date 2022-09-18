@@ -115,7 +115,7 @@ function showScore(numero) {
 
 function mostrar(){
     let info = JSON.parse(localStorage.getItem("newComment"));
-    if (info != "" && info.product == id_product){
+    if (info != null && info.product === id_product){
         let html = "";
         html = 
 
