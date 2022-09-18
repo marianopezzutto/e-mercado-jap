@@ -128,6 +128,8 @@ function mostrar(){
         </div>`;
 
     document.getElementById("commentContainer").innerHTML += html;
+    document.getElementById("select-score").value = "";
+    document.getElementById("comment-text").value = "";
     }
     
 }
@@ -165,8 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             localStorage.setItem("newComment", JSON.stringify(new_comment))
                         
                         mostrar();
-                        document.getElementById("select-score").value = "";
-                        document.getElementById("comment-text").value = "";
+                        
 
                     });
                     
