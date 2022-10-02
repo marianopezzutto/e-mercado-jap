@@ -38,25 +38,56 @@
   </nav>
   <main>
     <div class="container" id="infoContainer">
-     <div class="row">
-       <div class="col-md-1-12">
-         <div class="card">
-           <div class="card-body">
-             <h3 class="card-title">Title</h3>
-             <p class="card-text">Text</p>
-           </div>
-         </div>
-       </div>
-       <div class="col-xs-1-12">
-         <div class="card">
-           <div class="card-body">
-             <h3 class="card-title">Title</h3>
-             <p class="card-text">Text</p>
-           </div>
-         </div>
-       </div>
-     </div>
-     
+      <div class="row">
+
+        <div class="card mt-3 alert-secondary">
+          <div class="row align-items-start" id="colInfoPro">
+            <div class="col-7 mt-3">
+              <div id="carouselExampleControls" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                <div class="carousel-inner" id="showCarousel">
+                  <!-- Acá se agrega codigo html usando JavaScript -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <div class="row mt-2 justify-content-center" id="miniSlides">
+                <!-- Acá se agrega codigo html usando JavaScript -->
+              </div>
+            </div>
+            <!-- Acá se agrega codigo html usando JavaScript -->
+          </div>
+        </div>
+
+        <div class="d-grid gap-2 mt-4 mb-4">
+          <button class="btn btn-lg btn-primary" type="button">Agregar al carrito</button>
+        </div>
+        <div class="container card">
+          <div class="row align-items-start pb-3 alert-secondary" id="">
+            <div class="col-md-6" >
+              <h3 class="mt-3">Comentarios</h3>
+              <div id="commentContainer" style="height:400px; overflow: scroll;">
+                
+              </div>
+            </div>
+            <div class="col-md-6" id="inputContainer">
+              <h3 class="mt-3">Dejar un comentario:</h3>
+            </div>
+          </div>
+        </div>
+        <div class="container card mt-3 alert-secondary" >
+          <div class="row align-items-start pb-3" id="relatedPro">       
+            <h3 class="mt-3">Productos relacionados</h3>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
   <footer class="text-muted">

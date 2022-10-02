@@ -46,6 +46,9 @@ let getJSONData = function(url){
 
 document.addEventListener("DOMContentLoaded", function(){
   let user = localStorage.getItem("usuario");
+  if (user == null) {
+    window.location = "index.html"
+  }
   const buscador = document.createElement("ul");
   buscador.className = "navbar-nav w-100 justify-content-between"
   buscador.id = "search"
