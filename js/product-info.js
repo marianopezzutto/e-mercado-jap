@@ -3,7 +3,28 @@ let info_product_url = PRODUCT_INFO_URL + id_product + EXT_TYPE;
 let coment_product = PRODUCT_INFO_COMMENTS_URL + id_product + EXT_TYPE;
 let new_comment_Array = [];
 let comment;
+let cart_info_array = [];
+let producto;
+function redirigir(){
+    let object_info_cart = {
+        id:localStorage.getItem("proID"),
+        name:producto.name,
+        count:1,
+        unitCost:producto.cost,
+        currency:producto.currency,
+        image:producto.images[0],
+    };
+    if (localStorage.getItem("cartobjtoadd") != null){
+       for (const objetoguardao of JSON.parse(localStorage.getItem("cartobjtoadd"))) {
+        cart_info_array.push(objetoguardao);
+       } ;
+    };
+    cart_info_array.push(object_info_cart);
+    localStorage.setItem("cartobjtoadd", JSON.stringify(cart_info_array));
+    console.log(cart_info_array)
+    window.location = "cart.html"; 
 
+}
 function setProID(id) {
     localStorage.setItem("proID", id);
     window.location = "product-info.html"
@@ -33,7 +54,7 @@ function showInfoProduct(infopro) {
 
         show_photos +=
             `<div class="col px-1 py-1">
-                <a class="" href="#carouselProduct" role="button" data-slide-to="${i}">
+                <a class="" href="#showCarousel" role="button" data-slide-to="${i}">
                     <img src="${miniature}" class="img-fluid" alt="Responsive image">
                 </a>
             </div>`
@@ -154,8 +175,9 @@ document.addEventListener("DOMContentLoaded", function () {
     getJSONData(info_product_url).then(resultado => {
         if (resultado.status == "ok") {
 
-            let producto = resultado.data;
+            producto = resultado.data;
             showInfoProduct(producto);
+           
             getJSONData(coment_product).then(resultado => {
                 if (resultado.status == "ok") {
 
