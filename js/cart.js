@@ -33,16 +33,32 @@ function showProductsCart(objcart) {
                 </div>                    
             </td>
             <td class="subTotal">${element.currency} ${element.unitCost}</td>
-            <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+            <td><i class="fa fa-trash" aria-hidden="true" type="button"></i></td>
             
         `;
         
         cartProduct.appendChild(tr);
         const input = tr.querySelector("input");
+        const remove = tr.querySelector("i");
        
         input.addEventListener("input", function(){
             tr.querySelector(".subTotal").innerHTML = `${element.currency} ${Number(input.value) * element.unitCost}`;
         });
+
+        remove.addEventListener("click", function(){
+            let objCartArray = JSON.parse(localStorage.getItem("cartobjtoadd"));
+            
+            for (let i=0; i<objCartArray.length; i++ ) {
+                let articleObj = objCartArray[i];
+                
+                if (element.id == articleObj.id) {
+                    objCartArray.splice(i, 1);
+                    localStorage.setItem("cartobjtoadd", JSON.stringify(objCartArray));
+                    window.location = "cart.html";
+                }
+            }
+            
+        })
     }
 
 }
