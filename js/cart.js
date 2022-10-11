@@ -2,20 +2,20 @@ let info_cart_url = "https://japceibal.github.io/emercado-api/user_cart/25801.js
 let info_cart;
 let cartProduct = document.getElementById("infoProductCart");
 
-function redirect (id){
+function redirect(id) {
     localStorage.setItem("proID", id)
 }
 
 
 function showProductsCart(objcart) {
-    
+
     for (let i = 0; i < objcart.articles.length; i++) {
 
         const element = objcart.articles[i];
         const tr = document.createElement("tr");
         tr.className += "text-center";
         tr.innerHTML =
-        `   
+            `   
             <td class="col-md-1">
                 <div class="px-1" onclick="redirect(${element.id})">
                     <a class="" href="product-info.html" role="button">
@@ -36,46 +36,46 @@ function showProductsCart(objcart) {
             <td><i class="fa fa-trash" aria-hidden="true" type="button"></i></td>
             
         `;
-        
+
         cartProduct.appendChild(tr);
         const input = tr.querySelector("input");
         const remove = tr.querySelector("i");
-       
-        input.addEventListener("input", function(){
+
+        input.addEventListener("input", function () {
             tr.querySelector(".subTotal").innerHTML = `${element.currency} ${Number(input.value) * element.unitCost}`;
         });
 
-        remove.addEventListener("click", function(){
+        remove.addEventListener("click", function () {
             let objCartArray = JSON.parse(localStorage.getItem("cartobjtoadd"));
-            
-            for (let i=0; i<objCartArray.length; i++ ) {
+
+            for (let i = 0; i < objCartArray.length; i++) {
                 let articleObj = objCartArray[i];
-                
+
                 if (element.id == articleObj.id) {
                     objCartArray.splice(i, 1);
                     localStorage.setItem("cartobjtoadd", JSON.stringify(objCartArray));
                     window.location = "cart.html";
                 }
             }
-            
+
         })
     }
 
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-   
+
     getJSONData(info_cart_url).then(resultado => {
         if (resultado.status == "ok") {
 
             info_cart = resultado.data;
-            if (localStorage.getItem("cartobjtoadd") != null){
+            if (localStorage.getItem("cartobjtoadd") != null) {
                 for (const article_object of JSON.parse(localStorage.getItem("cartobjtoadd"))) {
-                info_cart.articles.push(article_object);
+                    info_cart.articles.push(article_object);
                 }
             };
             showProductsCart(info_cart);
-                     
+
         } else {
             alert(resultado.data + " - No es posible acceder a esa información en este momento, vuelva a intentarlo más tarde.");
         }

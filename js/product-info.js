@@ -5,6 +5,7 @@ let new_comment_Array = [];
 let comment;
 let cart_info_array = [];
 let producto;
+
 function redirigir(){
     let object_info_cart = {
         id:localStorage.getItem("proID"),
@@ -15,14 +16,20 @@ function redirigir(){
         image:producto.images[0],
     };
     if (localStorage.getItem("cartobjtoadd") != null){
-       for (const objetoguardao of JSON.parse(localStorage.getItem("cartobjtoadd"))) {
-        cart_info_array.push(objetoguardao);
+       for (const objetoguardado of JSON.parse(localStorage.getItem("cartobjtoadd"))) {
+            if (objetoguardado.id == object_info_cart.id){
+                objetoguardado.count += 1;
+                
+            }else{
+                cart_info_array.push(objetoguardado);
+                console.log(objetoguardado.id, object_info_cart.id);
+            }
+        
        } ;
     };
     cart_info_array.push(object_info_cart);
     localStorage.setItem("cartobjtoadd", JSON.stringify(cart_info_array));
-    console.log(cart_info_array)
-    window.location = "cart.html"; 
+    window.location = "cart.html";
 
 }
 function setProID(id) {
@@ -36,14 +43,14 @@ function showInfoProduct(infopro) {
     /* To add the img-carousel of the selected product */
     let carousel_active =
         `<div class="carousel-item active">
-            <img src="${infopro.images[0]}" class="d-block w-100" alt="...">
+            <img src="${infopro.images[0]}" class="d-block w-100 img-thumbnail border-primary" alt="...">
         </div>`;
     for (let i = 1; i < infopro.images.length; i++) {
         const element = infopro.images[i];
 
         carousel_active +=
             `<div class="carousel-item">
-                <img src="${element}" class="d-block w-100" alt="...">
+                <img src="${element}" class="d-block w-100 img-thumbnail border-primary" alt="...">
             </div>`;
     }
     document.getElementById("showCarousel").innerHTML = carousel_active;
@@ -53,9 +60,9 @@ function showInfoProduct(infopro) {
         const miniature = infopro.images[i];
 
         show_photos +=
-            `<div class="col px-1 py-1">
+            `<div class="col px-1 mb-2 mx-2">
                 <a class="" href="#showCarousel" role="button" data-slide-to="${i}">
-                    <img src="${miniature}" class="img-fluid" alt="Responsive image">
+                    <img src="${miniature}" class="img-thumbnail border-primary" alt="Responsive image">
                 </a>
             </div>`
     }
@@ -63,7 +70,7 @@ function showInfoProduct(infopro) {
 
     /* To add the information of the selected product */
     let show_info_products =
-        `<div class="col-5 mt-3">
+        `<div class="col-md-5 mt-3">
             <h1 class="">${infopro.name}</h1>
             <p class="" id="promScore"></p>
             <p class=""><strong>Precio:</strong> ${infopro.cost}${infopro.currency}</p>
@@ -80,7 +87,7 @@ function showInfoProduct(infopro) {
         const related_products = infopro.relatedProducts[i];
         related_card +=
             `<div class="col">
-                <div onclick="setProID(${related_products.id})" class="card cursor-active">
+                <div onclick="setProID(${related_products.id})" class="cursor-active">
                     <div class="card-body">
                         <img class="bd-placeholder-img card-img-top img-thumbnail" src="${related_products.image}">
                         <p class="card-text">${related_products.name}</p>

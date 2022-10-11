@@ -67,19 +67,17 @@ function addContentToHtml(){
             ((maxPrice == undefined) || (maxPrice != undefined && parseInt(product.cost) <= maxPrice))){
 
             htmlContentToAppend += `
-            <div onclick="setProID(${product.id})" class="list-group-item list-group-item-action cursor-active mb-3">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="${product.image}" alt="${product.description}" class="img-thumbnail">
+            <div onclick="setProID(${product.id})" class="col-md onLoadAnimation">
+                <div class="shadow card cursor-active mx-0 text-dark bg-light" style="height:410px;">
+                    <img src="${product.image}" alt="${product.description}" class="card-img-top mt-2">
+                    <div class="card-body"> 
+                        <h5 class="card-title text-primary">${product.name}</h5>
+                        <p class="mb-0">$${product.currency} ${product.cost}</p>
+                        <small class="text-muted mt-0">${product.soldCount} vendidos</small>
+                        <p><small>${product.description}</small></p> 
+                        <a onclick="setProID(${product.id})" href="product-info.html" class="fixed-bottom btn btn-outline-info mx-5">Ver más</a>
                     </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">${product.name} - ${product.currency} ${product.cost}</h4>
-                            <small class="text-muted">${product.soldCount} vendidos</small>
-                        </div>
-                        <p class="mb-1">${product.description}</p>
-                    </div>
-                </div>
+                </div>        
             </div>`;
         }
 

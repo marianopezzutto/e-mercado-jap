@@ -11,7 +11,7 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="fondoCategorias">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -38,16 +38,16 @@
   </nav>
   <main>
     <div class="jumbotron text-center"></div>
-    <div class="album py-5 bg-light">
+    <div class="album py-5">
       <div class="container">
         <div class="row">
           <div class="list-group" id="lista-productos">
             <!-- Acá se van a agregar los productos aplicando JavaScript -->
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm custom-card cursor-active" id="autos">
+        <div class="row onLoadAnimation">
+          <div class="col-md-4" >
+            <div class="mb-4 shadow-lg cursor-active text-center list-group-item-action" id="autos">
               <img class="bd-placeholder-img card-img-top" src="img/cars_index.jpg"
                 alt="Imgagen representativa de la categoría 'Autos'">
               <h3 class="m-3">Autos</h3>
@@ -57,7 +57,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm custom-card cursor-active" id="juguetes">
+            <div class="mb-4 shadow-lg cursor-active text-center list-group-item-action" id="juguetes">
               <img class="bd-placeholder-img card-img-top" src="img/toys_index.jpg"
                 alt="Imgagen representativa de la categoría 'Juguetes'">
               <h3 class="m-3">Juguetes</h3>
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm custom-card cursor-active" id="muebles">
+            <div class="mb-4 shadow-lg cursor-active text-center list-group-item-action" id="muebles">
               <img class="bd-placeholder-img card-img-top" src="img/furniture_index.jpg"
                 alt="Imgagen representativa de la categoría 'Muebles'">
               <h3 class="m-3">Muebles</h3>
@@ -78,7 +78,7 @@
           </div>
         </div>
         <div class="row">
-          <a class="btn btn-light btn-lg btn-block" href="categories.html">Y mucho más!</a>
+          <a class="btn btn btn-outline-dark btn-lg btn-block" href="categories.html">Y mucho más!</a>
         </div>
       </div>
     </div>

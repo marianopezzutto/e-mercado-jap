@@ -12,7 +12,7 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="fondoCategorias">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -73,7 +73,7 @@
             <div class="col">
               <input class="form-control" type="number" placeholder="máx." id="rangeFilterPriceMax">
             </div>
-            <div class="col-3 p-0">
+            <div class="col">
               <div class="btn-group" role="group">
                 <button class="btn btn-dark btn-block" id="rangeFilterPrice">Filtrar</button>
                 <button class="btn btn-light btn-sm" id="clearRangeFilter">Limpiar</button>
@@ -83,11 +83,11 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="list-group" id="lista-productos">
+      
+        <div class="row row-cols-md-4 g-4 mt-2" id="lista-productos">
           <!-- Acá se van a agregar los productos aplicando JavaScript -->
         </div>
-      </div>
+      
     </div>
   </main>
 
