@@ -108,9 +108,9 @@ function showComment(comentarios) {
         if (element.product == id_product) {
             htmlCommentToAppend +=
 
-                `<div class="card text-left">
+                `<div class="card fondoFlotante text-left">
                     <div class="card-body">
-                        <p class="card-title"><strong>${element.user}</strong> - ${element.dateTime} - </p>
+                        <p class="card-title text-dark"><strong>${element.user}</strong> - ${element.dateTime} - </p>
                         <p class="card-text">${showScore(parseInt(element.score))}</p>
                         <p class="card-text">${element.description}</p>
                     </div>
@@ -128,9 +128,9 @@ function showInputComment() {
         `
     <div class="form-group">
         <label for="">Nos encanta escuchar tu opinión!</label>
-        <textarea class="form-control" name="" id="comment-text" rows="3"></textarea>
+        <textarea class="form-control fondoFlotante" name="" id="comment-text" rows="3"></textarea>
         <label for="exampleSelect1" class="form-label mt-3">Puntuación</label>
-        <select class="form-select" id="select-score">
+        <select class="form-select fondoFlotante text-dark" id="select-score">
             <option>0</option>
             <option>1</option>
             <option>2</option>

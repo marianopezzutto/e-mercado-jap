@@ -68,10 +68,10 @@ function addContentToHtml(){
 
             htmlContentToAppend += `
             <div onclick="setProID(${product.id})" class="col-md onLoadAnimation">
-                <div class="shadow card cursor-active mx-0 text-dark bg-light" style="height:410px;">
-                    <img src="${product.image}" alt="${product.description}" class="card-img-top mt-2">
+                <div class="shadow card cursor-active mx-0 fondoFlotante" style="height:400px;">
+                    <img src="${product.image}" alt="${product.description}" class="card-img-top">
                     <div class="card-body"> 
-                        <h5 class="card-title text-primary">${product.name}</h5>
+                        <h5 class="card-title text-warning">${product.name}</h5>
                         <p class="mb-0">$${product.currency} ${product.cost}</p>
                         <small class="text-muted mt-0">${product.soldCount} vendidos</small>
                         <p><small>${product.description}</small></p> 
