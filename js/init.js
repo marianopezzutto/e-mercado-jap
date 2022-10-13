@@ -43,7 +43,26 @@ let getJSONData = function(url){
         return result;
     });
 }
-
+function cerrarSesion(){
+  swal({
+    title: "Estas seguro que quieres cerrar sesión?",
+    text: "Una vez cerrada tendras que volver a logearte",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      swal("Poof! Has cerrado tu sesión!", {
+        icon: "success",
+      });
+      localStorage.removeItem("usuario");
+      window.location = "index.html";
+    } else {
+      swal("Nos alegra que te quedes!");
+    }
+  });
+}
 document.addEventListener("DOMContentLoaded", function(){
   let user = localStorage.getItem("usuario");
   if (user == null) {
@@ -63,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function(){
     <div class="dropdown-menu">
       <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
       <a class="dropdown-item" href="cart.html">Mi carrito</a>
-      <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+      <a class="dropdown-item" onclick="cerrarSesion()">Cerrar sesión</a>
     </div>
     </li>`;
   
