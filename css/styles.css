@@ -207,11 +207,23 @@ a.custom-card:hover {
 
 .fondoCategorias{
   background: url('../img/fondodepantalla.jpg');
-  
 }
 
 .fondoFlotante{
   background-color: rgba(255, 255, 255, 0.135);
   color: white;
   border: solid rgba(4, 184, 250, 0.68);
+}
+
+.fondoBlackFlotante{
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: solid rgba(4, 184, 250, 0.68);
+}
+
+.navBarBgd{
+  
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 100%);
+  
 }

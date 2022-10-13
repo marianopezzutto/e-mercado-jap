@@ -13,7 +13,7 @@ function showProductsCart(objcart) {
 
         const element = objcart.articles[i];
         const tr = document.createElement("tr");
-        tr.className += "text-center";
+        tr.className += "text-center text-light";
         tr.innerHTML =
             `   
             <td class="col-md-1">

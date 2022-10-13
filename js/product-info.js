@@ -110,7 +110,7 @@ function showComment(comentarios) {
 
                 `<div class="card fondoFlotante text-left">
                     <div class="card-body">
-                        <p class="card-title text-dark"><strong>${element.user}</strong> - ${element.dateTime} - </p>
+                        <p class="card-title text-white-50"><strong>${element.user}</strong> - ${element.dateTime} - </p>
                         <p class="card-text">${showScore(parseInt(element.score))}</p>
                         <p class="card-text">${element.description}</p>
                     </div>
