@@ -43,26 +43,32 @@ function showInfoProduct(infopro) {
     /* To add the img-carousel of the selected product */
     let carousel_active =
         `<div class="carousel-item active">
-            <img src="${infopro.images[0]}" class="d-block w-100 img-thumbnail border-primary" alt="...">
+            <img src="${infopro.images[0]}" class="d-block w-100 img-thumbnail" alt="...">
         </div>`;
     for (let i = 1; i < infopro.images.length; i++) {
         const element = infopro.images[i];
 
         carousel_active +=
             `<div class="carousel-item">
-                <img src="${element}" class="d-block w-100 img-thumbnail border-primary" alt="...">
+                <img src="${element}" class="d-block w-100 img-thumbnail" alt="...">
             </div>`;
     }
     document.getElementById("showCarousel").innerHTML = carousel_active;
 
     let show_photos = "";
-    for (let i = 0; i < infopro.images.length; i++) {
+    show_photos += 
+        `<div class="col px-0">
+            <a type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                <img src="${infopro.images[0]}" class="img-thumbnail" alt="Responsive image">
+            </a>
+        </div>`
+    for (let i = 1; i < infopro.images.length; i++) {
         const miniature = infopro.images[i];
 
         show_photos +=
-            `<div class="col px-1 mb-2 mx-2">
-                <a class="" href="#showCarousel" role="button" data-slide-to="${i}">
-                    <img src="${miniature}" class="img-thumbnail border-primary" alt="Responsive image">
+            `<div class="col px-0">
+                <a type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="${i}" aria-label="Slide ${i}">
+                    <img src="${miniature}" class="img-thumbnail" alt="Responsive image">
                 </a>
             </div>`
     }
@@ -70,13 +76,19 @@ function showInfoProduct(infopro) {
 
     /* To add the information of the selected product */
     let show_info_products =
-        `<div class="col-md-5 mt-3">
+        `<div class="col-lg-5 mt-3">
             <h1 class="">${infopro.name}</h1>
             <p class="" id="promScore"></p>
             <p class=""><strong>Precio:</strong> ${infopro.cost}${infopro.currency}</p>
             <p class=""><strong>Descripción:</strong> ${infopro.description}</p>
             <p class=""><strong>Categoria:</strong> ${infopro.category}</p>
-            <p class=""><strong>Cantidad vendida:</strong> ${infopro.soldCount}</p>
+            <p class="mb-5"><strong>Cantidad vendida:</strong> ${infopro.soldCount}</p>
+            <div class="d-grid d-md-flex d-sm-flex my-auto justify-content-md-center mt-5 mb-5" style="height: 70px;">
+                <button onclick="redirigir()" class="btn btn-lg btn-success" type="button">
+                     <i class="fas fa-cart-arrow-down" aria-hidden="true"></i>
+                     Agregar al carrito
+                </button>
+            </div>
         </div>`;
     document.getElementById("colInfoPro").innerHTML += show_info_products;
 

@@ -79,10 +79,11 @@ document.addEventListener("DOMContentLoaded", function(){
     </li>
     <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hola! ${user}</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-      <a class="dropdown-item" href="cart.html">Mi carrito</a>
-      <a class="dropdown-item" onclick="cerrarSesion()">Cerrar sesión</a>
+    <div class="dropdown-menu fondoBlackFlotante">
+      <a class="dropdown-item text-light" href="my-profile.html">Mi perfil</a>
+      <a class="dropdown-item text-light" href="cart.html">Mi carrito</a>
+      <hr>
+      <a class="dropdown-item text-light" onclick="cerrarSesion()">Cerrar sesión</a>
     </div>
     </li>`;
   

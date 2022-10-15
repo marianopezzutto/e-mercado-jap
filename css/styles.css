@@ -210,9 +210,9 @@ a.custom-card:hover {
 }
 
 .fondoFlotante{
-  background-color: rgba(255, 255, 255, 0.135);
+  background-color: rgba(255, 255, 255, 0.112);
   color: white;
-  border: solid rgba(4, 184, 250, 0.68);
+  /* border: solid rgba(4, 184, 250, 0.68); */
 }
 
 .fondoBlackFlotante{
@@ -224,6 +224,6 @@ a.custom-card:hover {
 .navBarBgd{
   
   background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 100%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(0, 96, 148, 0.715) 100%);
   
 }
