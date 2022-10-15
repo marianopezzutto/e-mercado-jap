@@ -13,7 +13,7 @@
 </head>
 
 <body class="fondoCategorias">
-  <nav class="navbar navbar-expand-lg navbar-dark navBarBgd nav-pills p-1">
+  <nav class="navbar navbar-expand-lg navbar-dark nav-pills navBarBgd p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,8 +43,8 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col text-end">
-          <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+        <div class="col text-end me-3">
+          <div class="btn-group btn-group-toggle mb-2" data-bs-toggle="buttons">
             <input type="radio" class="btn-check" name="options" id="sortAsc">
             <label class="btn btn-light" for="sortAsc">A-Z</label>
             <input type="radio" class="btn-check" name="options" id="sortDesc">
@@ -56,17 +56,17 @@
       </div>
       <div class="row">
         <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
-          <div class="row container p-0 m-0">
-            <div class="col text-light">
+          <div class="row p-0 m-0">
+            <div class="col col-xs-1 text-light">
               <p class="font-weight-normal text-end my-2">Cant.</p>
             </div>
-            <div class="col">
+            <div class="col col-xs-3">
               <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
             </div>
-            <div class="col">
+            <div class="col col-xs-3">
               <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
             </div>
-            <div class="col-3 p-0">
+            <div class="col col-xs-3">
               <div class="btn-group" role="group">
                 <button class="btn btn-primary btn-block" id="rangeFilterCount">Filtrar</button>
                 <button class="btn btn-danger btn-sm" id="clearRangeFilter">Limpiar</button>

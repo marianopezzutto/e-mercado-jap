@@ -206,7 +206,15 @@ a.custom-card:hover {
 }
 
 .fondoCategorias{
-  background: url('../img/fondodepantalla.jpg');
+  background-image: url('../img/fondodepantalla.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
+}
+
+body .background-image{
+  filter: blur(10px);
 }
 
 .fondoFlotante{
@@ -216,7 +224,7 @@ a.custom-card:hover {
 }
 
 .fondoBlackFlotante{
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.589);
   color: white;
   border: solid rgba(4, 184, 250, 0.68);
 }

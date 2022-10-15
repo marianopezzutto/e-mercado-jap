@@ -16,7 +16,7 @@ function showProductsCart(objcart) {
         tr.className += "text-center text-light";
         tr.innerHTML =
             `   
-            <td class="col-md-1 d-none d-sm-table-cell">
+            <td class="col-md-1 d-none d-sm-table-cell d-md-table-cell">
                 <div class="px-1" onclick="redirect(${element.id})">
                     <a class="" href="product-info.html" role="button">
                         <img src="${element.image}" class="img-fluid inline" alt="Responsive image">
@@ -27,7 +27,7 @@ function showProductsCart(objcart) {
             <td>${element.currency} ${element.unitCost}</td>
             <td>
                 <div class="row justify-content-center">
-                    <div class="col-sm-2 col-md-2 col-lg-3" >
+                    <div class="col col-lg-3 col-xl-3" >
                     <input type="number" value="1" min="0" class="form-control" >
                     </div>        
                 </div>                    
