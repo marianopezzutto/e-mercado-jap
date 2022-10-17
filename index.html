@@ -25,7 +25,7 @@
 
     <div>
 
-      <div class="signin fondoBlackFlotante mt-5">
+      <div class="signin fondoBlackFlotante mt-5 justify-content-between">
         <img class="img-fluid mb-5" src="img/login.png">
         <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
@@ -48,6 +48,20 @@
         </div>
         <div class="g_id_signin" data-type="standard">
         </div>
+        <script>
+          function handleCredentialResponse(response) {
+             // decodeJwtResponse() is a custom function defined by you
+             // to decode the credential response.
+             const responsePayload = decodeJwtResponse(response.credential);
+        
+             console.log("ID: " + responsePayload.sub);
+             console.log('Full Name: ' + responsePayload.name);
+             console.log('Given Name: ' + responsePayload.given_name);
+             console.log('Family Name: ' + responsePayload.family_name);
+             console.log("Image URL: " + responsePayload.picture);
+             console.log("Email: " + responsePayload.email);
+          }
+        </script>
       </div>
     </div>
     </div>
