@@ -4,11 +4,11 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- 
-  <title>∙ Mercado - Los mejores precios!</title>
-  
+  <link rel="icon" href="img/icone.png">
+  <title>mercado - Los mejores precios!</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <style>
     body {
@@ -17,34 +17,40 @@
   </style>
 </head>
 
-<body>
+<body class="fondoCategorias">
 
   <main class="form-signin text-center""> 
     
-    <div class="container">
-      
-      <div>
-        
-        <div class="signin">
-          <img class="img-fluid mb-5" src="img/login.png">
-          <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
+    <div class=" container">
 
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="email" placeholder="name@example.com">
-            <label for="floatingInput">Email</label>
-          </div>
-          
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="password" placeholder="Password">
-            <label for="floatingPassword">Contraseña</label>
-          </div>
+    <div>
 
-          <div class="form-floating">
-            <button class="btn btn-primary btn-sm signin mb-3" type="button" id="ingreso">Ingresar</button>
-          </div>
-        </div> 
-      </div>  
-    </div>  
+      <div class="signin fondoBlackFlotante mt-5">
+        <img class="img-fluid mb-5" src="img/login.png">
+        <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
+
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control fondoFlotante" id="email" placeholder="name@example.com">
+          <label for="floatingInput">Email</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="password" class="form-control fondoFlotante" id="password" placeholder="Password">
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+
+        <div class="form-floating mt-3">
+          <button class="btn btn-primary btn-sm signin" type="button" id="ingreso">Ingresar</button>
+        </div>
+        <p class="my-1">o</p>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <div id="g_id_onload" data-client_id="650459252503-iva9juqdc5j2gi1a8eosk3gsb156v5ba.apps.googleusercontent.com" data-callback="handleCredentialResponse">
+        </div>
+        <div class="g_id_signin" data-type="standard">
+        </div>
+      </div>
+    </div>
+    </div>
   </main>
 
   <footer class="text-muted">
@@ -57,7 +63,7 @@
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
-  
+
   <script src="js/login.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 

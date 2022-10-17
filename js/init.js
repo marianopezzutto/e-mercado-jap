@@ -74,8 +74,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
   document.getElementById("navbarNav").appendChild(buscador);
   document.getElementById("search").innerHTML = `
+  
     <li class="nav-item">
-      <input type="search" class="nav-item form-control me-sm-2" placeholder= "Buscar productos">
+      <div class="input-group">
+        <input type="search" class="nav-item form-control fondoFlotante" placeholder= "Buscar productos">
+        <a class="input-group-text fondoFlotante"><i class="fas fa-search"></i></a>
+      </div>
     </li>
     <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hola! ${user}</a>

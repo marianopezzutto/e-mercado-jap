@@ -28,12 +28,12 @@ function showProductsCart(objcart) {
             <td>
                 <div class="row justify-content-center">
                     <div class="col col-lg-3 col-xl-3" >
-                    <input type="number" value="1" min="0" class="form-control" >
+                    <input type="number" value="1" min="0" class="form-control fondoFlotante" >
                     </div>        
                 </div>                    
             </td>
             <td class="subTotal">${element.currency} ${element.unitCost}</td>
-            <td><i class="fa fa-trash" aria-hidden="true" type="button"></i></td>
+            <td><i class="fa fa-trash" aria-hidden="true" type="button" alt="Eliminar"></i></td>
             
         `;
 
