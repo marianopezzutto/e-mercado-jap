@@ -2,6 +2,7 @@
 function handleCredentialResponse(response) {
     const responsePayload = jwt_decode(response.credential);
     localStorage.setItem("usuario", responsePayload.email);
+    localStorage.setItem("foto", responsePayload.picture);
     window.location.href = "inicio.html";
 }
 
