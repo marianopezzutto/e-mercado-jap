@@ -23,9 +23,9 @@
     
     <div class=" container">
 
-    <div>
-
-      <div class="signin fondoBlackFlotante mt-5 justify-content-between">
+    <form>
+      
+      <div class="card signin fondoBlackFlotante mt-5 justify-content-between">
         <img class="img-fluid mb-5" src="img/login.png">
         <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-floating">
-          <input type="password" class="form-control fondoFlotante" id="password" placeholder="Password">
+          <input type="password" class="form-control fondoFlotante" id="password" placeholder="Password" autocomplete="current-password">
           <label for="floatingPassword">Contraseña</label>
         </div>
 
@@ -43,37 +43,36 @@
           <button class="btn btn-primary btn-sm signin" type="button" id="ingreso">Ingresar</button>
         </div>
         <p class="my-1">o</p>
+
         <script src="https://accounts.google.com/gsi/client" async defer></script>
-        <div id="g_id_onload" data-client_id="650459252503-iva9juqdc5j2gi1a8eosk3gsb156v5ba.apps.googleusercontent.com" data-callback="handleCredentialResponse">
+        <div class="form-floating mx-auto">
+          <div id="g_id_onload" data-client_id="650459252503-iva9juqdc5j2gi1a8eosk3gsb156v5ba.apps.googleusercontent.com" data-callback="handleCredentialResponse">
+          </div>
+          <div class="g_id_signin" data-type="standard">
+          </div>
         </div>
-        <div class="g_id_signin" data-type="standard">
-        </div>
+        
         <script>
-          /* function handleCredentialResponse(response) {
+          
+          function handleCredentialResponse(response) {
+            let profile = response.getBasicProfile();
+            console.log(profile)
+
              // decodeJwtResponse() is a custom function defined by you
              // to decode the credential response.
+             /* const responsePayload = decodeJwtResponse(response.credential);
 
-            const jwt = 'eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..KVcNLqK-3-8ZkYIC.xSwF4VxO0kUMUD2W-cifsNUxnr-swyBq-nADBptyt6y9n79-iNc5b0AALJpRwc0wwDkJw8hNOMjApNUTMsK9b-asToZ3DXFMvwfJ6n1aWefvd7RsoZ2LInWFfVAuttJDzoGB.uuexQoWHwrLMEYRElT8pBQ'
-
-            const { payload, protectedHeader } = await jose.jwtDecrypt(jwt, secretKey);
-
-            console.log(protectedHeader);
-            console.log(payload);
-
-              const responsePayload = decodeJwtResponse(response.credential);
-        
              console.log("ID: " + responsePayload.sub);
              console.log('Full Name: ' + responsePayload.name);
              console.log('Given Name: ' + responsePayload.given_name);
              console.log('Family Name: ' + responsePayload.family_name);
              console.log("Image URL: " + responsePayload.picture);
-             console.log("Email: " + responsePayload.email);
-          } */
-
-          
+             console.log("Email: " + responsePayload.email); */
+          }
         </script>
+
       </div>
-    </div>
+    </form>
     </div>
   </main>
 
@@ -88,6 +87,7 @@
     </div>
   </footer>
 
+  
   <script src="js/login.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
