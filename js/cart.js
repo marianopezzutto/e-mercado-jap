@@ -1,17 +1,38 @@
-let info_cart_url = "https://japceibal.github.io/emercado-api/user_cart/25801.json";
 let info_cart;
 let cartProduct = document.getElementById("infoProductCart");
+let value = 1;
 
 function redirect(id) {
     localStorage.setItem("proID", id)
 }
 
+function shippingType() {
+    var radios = document.getElementsByName("optionsRadios");
+    var selected = Array.from(radios).find(radio => radio.checked);
+
+    document.getElementById("shippingType").innerHTML = `Gastos de envìo: $${parseInt((selected.value*value)/100)}`
+        
+}
+function subTotalValues() {
+    
+    for (let i = 0; i < info_cart.length; i++) {
+        const element = info_cart[i];
+
+        if (element.currency === "USD") {
+            value += (element.count * element.unitCost)
+        }else{
+            value += element.count * (element.unitCost/41)
+        };        
+    }
+    document.getElementById("totalAmount").innerHTML = `Sub total = U$D ${parseInt(value)}`
+}
+
 
 function showProductsCart(objcart) {
 
-    for (let i = 0; i < objcart.articles.length; i++) {
+    for (let i = 0; i < objcart.length; i++) {
 
-        const element = objcart.articles[i];
+        const element = objcart[i];
         const tr = document.createElement("tr");
         tr.className += "text-center text-light";
         tr.innerHTML =
@@ -28,21 +49,24 @@ function showProductsCart(objcart) {
             <td>
                 <div class="row justify-content-center">
                     <div class="col col-lg-3 col-xl-3" >
-                    <input type="number" value="1" min="0" class="form-control fondoFlotante" >
+                    <input type="number" value="${element.count}" min="1" step="1" class="form-control fondoFlotante" >
                     </div>        
                 </div>                    
             </td>
-            <td class="subTotal">${element.currency} ${element.unitCost}</td>
+            <td class="subTotal">${element.currency} ${element.unitCost*element.count}</td>
             <td><i class="fa fa-trash" aria-hidden="true" type="button" alt="Eliminar"></i></td>
-            
         `;
-
+        
         cartProduct.appendChild(tr);
         const input = tr.querySelector("input");
         const remove = tr.querySelector("i");
-
+        
         input.addEventListener("input", function () {
             tr.querySelector(".subTotal").innerHTML = `${element.currency} ${Number(input.value) * element.unitCost}`;
+            objcart[i].count = input.value;
+            localStorage.setItem("cartobjtoadd", JSON.stringify(info_cart));
+            subTotalValues();
+            
         });
 
         remove.addEventListener("click", function () {
@@ -57,27 +81,17 @@ function showProductsCart(objcart) {
                     window.location = "cart.html";
                 }
             }
-
         })
     }
-
 }
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    getJSONData(info_cart_url).then(resultado => {
-        if (resultado.status == "ok") {
+    if (localStorage.getItem("cartobjtoadd") != null) {
 
-            info_cart = resultado.data;
-            if (localStorage.getItem("cartobjtoadd") != null) {
-                for (const article_object of JSON.parse(localStorage.getItem("cartobjtoadd"))) {
-                    info_cart.articles.push(article_object);
-                }
-            };
-            showProductsCart(info_cart);
+        info_cart = JSON.parse(localStorage.getItem("cartobjtoadd"));
+        showProductsCart(info_cart);
+        subTotalValues();
+    }
 
-        } else {
-            alert(resultado.data + " - No es posible acceder a esa información en este momento, vuelva a intentarlo más tarde.");
-        }
-    })
 })
