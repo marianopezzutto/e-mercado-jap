@@ -219,14 +219,14 @@ body .background-image{
 }
 
 .fondoFlotante{
-  background-color: rgba(255, 255, 255, 0.112);
-  color: white;
+  background-color: rgba(255, 255, 255, 0.219);
+  color: rgb(255, 255, 255);
   /* border: solid rgba(4, 184, 250, 0.68); */
 }
 
 .fondoBlackFlotante{
   background-color: rgba(0, 0, 0, 0.589);
-  color: white;
+  color: rgb(255, 255, 255);
   border: solid rgba(4, 184, 250, 0.68);
 }
 

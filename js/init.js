@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function(){
   };
 
    if (user_foto != null){
-    imguser = ` <img src=${user_foto} class="my-auto nav-item img-fluil rounded-circle" alt="" style="min-width: 20px; width: 20px; height: 20px;">`;
+    imguser = ` <img src="${user_foto}" class="my-auto nav-item img-fluil rounded-circle" alt="" style="min-width: 20px; width: 20px; height: 20px;">`;
   } else {
     imguser = ` <i class="	far fa-user-circle"></i>
     `;
