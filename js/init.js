@@ -8,6 +8,8 @@ const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 let all_products = [];
 let products_to_show = [];
+let imguser = "";
+let user = "";
 
 /* Function to get all products */
 
@@ -122,26 +124,27 @@ function prueba1() {
   }
   console.log(all_products[1])
 }
-
-/* Event listener  */
-
-document.addEventListener("DOMContentLoaded", function () {
- 
-  let user = localStorage.getItem("usuario");
+function dataUser() {
+  user = localStorage.getItem("usuario");
   let user_foto = localStorage.getItem("foto");
-  let imguser = "";
+ 
   
   if (user == null) {
     window.location = "index.html"
   };
 
   if (user_foto != null) {
-    imguser = ` <img src="${user_foto}" class="my-auto nav-item img-fluil rounded-circle" alt="" style="min-width: 20px; width: 20px; height: 20px;">`;
+    imguser = ` <img src=${user_foto} class="my-auto nav-item img-fluil rounded-circle" alt="" style="min-width: 20px; width: 20px; height: 20px;">`;
   } else {
     imguser = ` <i class="	far fa-user-circle"></i>
     `;
   };
 
+}
+/* Event listener  */
+
+document.addEventListener("DOMContentLoaded", function () {
+  dataUser();
   const buscador = document.createElement("ul");
   buscador.className = "navbar-nav w-100 justify-content-between";
   buscador.id = "search";
@@ -156,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hola! ${user}${imguser}</a>
+      <a id="nameProfile" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hola! ${user}${imguser}</a>
       <div class="dropdown-menu fondoFlotante fondoBlackFlotante">
         <a class="dropdown-item fondoFlotante" href="my-profile.html"><i class="fas fa-user-edit"></i> Mi perfil</a>
         <a class="dropdown-item fondoFlotante" href="cart.html"><i class="fas fa-cart-arrow-down" aria-hidden="true"></i> Mi carrito</a>
@@ -165,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       
     </li>`;
-
+    
     getProducts();
 
 });
