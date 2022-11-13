@@ -1,3 +1,5 @@
+const img = document.getElementById("validationCustom06");
+
 function showUserData() {
     let name = localStorage.getItem("nombre");
     let foto = localStorage.getItem("foto");
@@ -44,12 +46,23 @@ document.addEventListener("DOMContentLoaded", function () {
     let form = document.getElementById("perfilForm")
     form.addEventListener('submit', function (event) {
         if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
+            event.preventDefault();
+            event.stopPropagation();
         }
         if (form.checkValidity()){
-            saveUserData()
+            saveUserData();
         }
         form.classList.add('was-validated')
     }, false)
+
+    img.addEventListener("change", ()=>{
+        const file_rider = new FileReader();
+        file_rider.readAsDataURL(img.files[0]);
+        
+        file_rider.addEventListener("load", ()=>{
+            const url = file_rider.result;
+            localStorage.setItem("foto", url);
+            showUserData();
+        })
+    })
 })
